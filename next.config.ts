@@ -10,7 +10,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // This allows the build to finish even if there are small coding/type errors
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -21,8 +20,6 @@ const nextConfig: NextConfig = {
     workerThreads: false,
     cpus: 1,
   },
-  // Removed output: 'export' to allow standard Vercel deployment
-  // turbopack: {} is usually handled via the CLI flag, but keeping it is fine
 };
 
 export default nextConfig;
