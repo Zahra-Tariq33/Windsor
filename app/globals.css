@@ -1,0 +1,58 @@
+/* tailwindcss */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #f9f5f1;
+    --foreground: #171717;
+  }
+
+  .dark {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+  * {
+    cursor: pointer !important;
+  }
+  input,
+  textarea,
+  select {
+    cursor: text !important;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-open-sans), Arial, Helvetica, sans-serif;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+}
+
+@layer components {
+  .input {
+    @apply w-full rounded-lg border border-gray-200 dark:border-gray-700
+    bg-transparent px-4 py-3 text-sm
+    text-gray-800 dark:text-white
+    placeholder:text-gray-400 dark:placeholder:text-gray-500
+    focus:outline-none focus:ring-2 focus:ring-[#8b0000]/50;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out;
+}
