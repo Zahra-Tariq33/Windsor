@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  reactStrictMode: true,
+
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -10,16 +12,21 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  typescript: {
-    ignoreBuildErrors: true,
+
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production",
   },
+
   eslint: {
     ignoreDuringBuilds: true,
   },
-  experimental: {
-    workerThreads: false,
-    cpus: 1,
+
+  typescript: {
+    ignoreBuildErrors: false,
   },
+
+  compress: true,
+  poweredByHeader: false,
 };
 
 export default nextConfig;
